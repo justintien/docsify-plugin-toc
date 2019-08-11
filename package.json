@@ -4,6 +4,11 @@
   "description": "A docsify plugin to display ToC for each page",
   "main": "src",
   "unpkg": "dist/docsify-plugin-toc.min.js",
+  "homepage": "https://github.com/justintien/docsify-plugin-toc",
+  "repository": "git@github.com:justintien/docsify-plugin-toc.git",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js src",
