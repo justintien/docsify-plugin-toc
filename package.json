@@ -1,0 +1,29 @@
+{
+  "name": "docsify-plugin-toc",
+  "version": "1.0.0",
+  "description": "A docsify plugin to display ToC for each page",
+  "main": "src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js src",
+    "build": "webpack"
+  },
+  "keywords": [
+    "docsify"
+  ],
+  "author": "Justin Tien",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
