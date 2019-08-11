@@ -22,7 +22,7 @@
 2. Insert script into docsify document:
 
     ```html
-    <script src="//unpkg.com/docsify-plugin-toc/dist/docsify-plugin-toc.min.js"></script>
+    <script src="//unpkg.com/docsify-plugin-toc"></script>
     ```
 
 ## Options
