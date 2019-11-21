@@ -75,6 +75,7 @@ aside.toc-nav.nothing {
 }
 
 .page_toc div[class^="lv"] a span {
+  color: var(--sidebar-nav-link-color--hover, var(--sidebar-nav-link-color));
   display: block;
   overflow: hidden;
   white-space: nowrap;
