@@ -44,9 +44,13 @@ const scrollHandler = () => {
       insightBlocks.push(index)
     }
   })
-  // scroll to bottom and still multi titile in sight, choose the last one
-  if (document.body.scrollHeight - document.body.scrollTop === document.body.clientHeight &&
+  const scrollingElement = document.scrollingElement || document.body
+  // scroll to top, choose the first one
+  if (scrollingElement.scrollTop === 0) {
+    insightBlocks = [0]
+  } else if (scrollingElement.offsetHeight - window.innerHeight - scrollingElement.scrollTop < 5 &&
     insightBlocks.length > 0) {
+    // scroll to bottom and still multi titile in sight, choose the last one
     insightBlocks = [insightBlocks[insightBlocks.length - 1]]
   }
   if (insightBlocks.length) {
