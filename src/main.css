@@ -1,6 +1,14 @@
 @media only screen and (max-width: 1299px) {
   aside.toc-nav {
-    display: none;
+    max-width: 45px;
+    opacity: 0.6;
+    right: 0 !important;
+    margin-right: 0 !important;
+    background: #fff;
+  }
+  aside.toc-nav:hover {
+    max-width: inherit;
+    opacity: 1;
   }
 }
 
