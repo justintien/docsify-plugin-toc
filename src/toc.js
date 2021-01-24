@@ -2,13 +2,13 @@ import './main.css'
 
 // To collect headings and then add to the page ToC
 function pageToC (headings, path) {
-  var toc = ['<div class="page_toc">']
-  var list = []
+  let toc = ['<div class="page_toc">']
+  const list = []
   headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
 
   if (headings) {
     headings.forEach(function (heading) {
-      var item = generateToC(heading.tagName.replace(/h/gi, ''), heading.innerHTML)
+      const item = generateToC(heading.tagName.replace(/h/gi, ''), heading.innerHTML)
       if (item) {
         list.push(item)
       }
@@ -25,8 +25,8 @@ function pageToC (headings, path) {
 
 // To generate each ToC item
 function generateToC (level, html) {
-  if (level > 1 && level <= window.$docsify.toc.tocMaxLevel) {
-    var heading = ['<div class="lv' + level + '">', html, '</div>'].join('')
+  if (level >= 1 && level <= window.$docsify.toc.tocMaxLevel) {
+    const heading = ['<div class="lv' + level + '">', html, '</div>'].join('')
     return heading
   }
   return ''
@@ -50,8 +50,8 @@ const scrollHandler = () => {
     insightBlocks = [0]
   } else if (scrollingElement.offsetHeight - window.innerHeight - scrollingElement.scrollTop < 5 &&
     insightBlocks.length > 0) {
-    // scroll to bottom and still multi titile in sight, choose the last one
-    insightBlocks = [insightBlocks[insightBlocks.length - 1]]
+    // scroll to bottom and still multi title in sight, choose the first one
+    insightBlocks = [insightBlocks[0]]
   }
   if (insightBlocks.length) {
     const tocList = document.querySelectorAll('.page_toc>div')
@@ -67,15 +67,15 @@ const scrollHandler = () => {
 
 export function install (hook, vm) {
   hook.mounted(function () {
-    var content = window.Docsify.dom.find('.content')
+    const content = window.Docsify.dom.find('.content')
     if (content) {
-      var nav = window.Docsify.dom.create('aside', '')
+      const nav = window.Docsify.dom.create('aside', '')
       window.Docsify.dom.toggleClass(nav, 'add', 'toc-nav')
       window.Docsify.dom.before(content, nav)
     }
   })
   hook.doneEach(function () {
-    var nav = window.Docsify.dom.find('.toc-nav')
+    const nav = window.Docsify.dom.find('.toc-nav')
     if (nav) {
       nav.innerHTML = pageToC().trim()
       if (nav.innerHTML === '') {
