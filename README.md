@@ -4,6 +4,8 @@
 
 [![npm](https://img.shields.io/npm/v/docsify-plugin-toc.svg?style=flat-square)](https://www.npmjs.com/package/docsify-plugin-toc)
 
+[![homepage](./snapshot.png)](https://blog.jiapan.tw "Justin (Jiapan 賈胖) 的 Blog")
+
 ## Usage
 
 1. Configure docsify-plugin-toc:
@@ -29,5 +31,5 @@
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `tocMaxLevel` | `number` | The maximum depth of the headings printed on the ToC. If you set `tocMaxLevel` to 3, I recommand you to set `subMaxLevel` to 2 avoid ToC duplication. |
+| `tocMaxLevel` | `number` | The maximum depth of the headings printed on the ToC. If you set `tocMaxLevel` to 3, I recommend you to set `subMaxLevel` to 2 avoid ToC duplication. |
 | `target` | `string` | The target heading printed on the ToC. It's used as an argument to query DOM with `querySelectorAll()` |
