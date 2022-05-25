@@ -1,5 +1,3 @@
-import './main.css'
-
 // To collect headings and then add to the page ToC
 function pageToC (headings, path) {
   let toc = ['<div class="page_toc">']
