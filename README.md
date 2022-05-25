@@ -21,10 +21,15 @@
     </script>
     ```
 
-2. Insert script into docsify document:
+2. Insert style/script into docsify document:
 
     ```html
-    <script src="//unpkg.com/docsify-plugin-toc"></script>
+    <!-- head -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.0/dist/light.css">
+    <!-- Also insert you custom css -->
+
+    <!-- body -->
+    <script src="https://unpkg.com/docsify-plugin-toc"></script>
     ```
 
 ## Options
