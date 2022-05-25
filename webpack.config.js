@@ -43,11 +43,11 @@ module.exports = {
         {
           from: path.join(process.cwd(), 'src', 'assets', 'light.css'),
           to: path.join(process.cwd(), 'dist', 'light.css')
-        },
-        {
-          from: path.join(process.cwd(), 'src', 'assets', 'dark.css'),
-          to: path.join(process.cwd(), 'dist', 'dark.css')
         }
+        // {
+        //   from: path.join(process.cwd(), 'src', 'assets', 'dark.css'),
+        //   to: path.join(process.cwd(), 'dist', 'dark.css')
+        // }
       ]
     })
   ],
