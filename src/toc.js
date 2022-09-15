@@ -2,7 +2,7 @@
 function pageToC (headings, path) {
   let toc = ['<div class="page_toc">']
   const list = []
-  headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
+  headings = findTitles()
 
   if (headings) {
     headings.forEach(function (heading) {
@@ -33,7 +33,7 @@ function generateToC (level, html) {
 // scroll listener
 const scrollHandler = () => {
   const clientHeight = window.innerHeight
-  const titleBlocks = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
+  const titleBlocks = findTitles()
   let insightBlocks = []
   titleBlocks.forEach((titleBlock, index) => {
     const rect = titleBlock.getBoundingClientRect()
@@ -61,6 +61,14 @@ const scrollHandler = () => {
       }
     })
   }
+}
+// find toc titles
+function findTitles() {
+  const targets = window.$docsify.toc.target.split(',')
+  const selectors = targets.map(item => {
+    return `#main ${item}`
+  }).join(',')
+  return document.querySelectorAll(selectors)
 }
 
 export function install (hook, vm) {
