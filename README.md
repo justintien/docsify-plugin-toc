@@ -15,7 +15,8 @@
     window.$docsify = {
       toc: {
         tocMaxLevel: 5,
-        target: 'h2, h3, h4, h5, h6'
+        target: 'h2, h3, h4, h5, h6',
+        ignoreHeader:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
       },
     }
     </script>
@@ -38,3 +39,4 @@
 | --- | --- | --- |
 | `tocMaxLevel` | `number` | The maximum depth of the headings printed on the ToC. If you set `tocMaxLevel` to 3, I recommend you to set `subMaxLevel` to 2 avoid ToC duplication. |
 | `target` | `string` | The target heading printed on the ToC. It's used as an argument to query DOM with `querySelectorAll()` |
+| `ignoreHeaders` | `string[]` | ignore header name keywrod list, (e.g. ['develop', /develop/i], support Regular expressions) |
