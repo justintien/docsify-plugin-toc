@@ -2,11 +2,23 @@
 function pageToC (headings, path) {
   let toc = ['<div class="page_toc">']
   const list = []
+  const ignoreHeaders = window.$docsify.toc.ignoreHeaders || []
   headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
 
   if (headings) {
     headings.forEach(function (heading) {
-      const item = generateToC(heading.tagName.replace(/h/gi, ''), heading.innerHTML)
+      const innerText = heading.innerText
+      const innerHtml = heading.innerHTML
+      
+      let needSkip = false
+      if (ignoreHeaders.length > 0) {
+        console.error(innerText)
+        needSkip = ignoreHeaders.some(str => innerText.match(str))
+      }
+
+      if (needSkip) return
+      
+      const item = generateToC(heading.tagName.replace(/h/gi, ''), innerHtml)
       if (item) {
         list.push(item)
       }
