@@ -9,7 +9,7 @@ function pageToC (headings, path) {
     headings.forEach(function (heading) {
       const innerText = heading.innerText
       const innerHtml = heading.innerHTML
-      
+
       let needSkip = false
       if (ignoreHeaders.length > 0) {
         console.error(innerText)
@@ -17,7 +17,7 @@ function pageToC (headings, path) {
       }
 
       if (needSkip) return
-      
+
       const item = generateToC(heading.tagName.replace(/h/gi, ''), innerHtml)
       if (item) {
         list.push(item)
