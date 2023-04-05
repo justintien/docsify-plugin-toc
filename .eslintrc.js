@@ -17,6 +17,6 @@ module.exports = {
   },
   rules: {
     semi: 'off',
-    'space-before-function-paren': 'off'
+    'space-before-function-paren': 'off',
   }
 };

@@ -30,6 +30,8 @@ function getContentType(filePath) {
   switch (extname) {
     case '.js':
       return 'text/javascript';
+    case '.css':
+      return 'text/css'; // add this case
     default:
       return 'text/plain';
   }
