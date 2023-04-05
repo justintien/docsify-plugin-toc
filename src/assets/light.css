@@ -1,110 +1,98 @@
-@media only screen and (max-width: 1299px) {
-  aside.toc-nav {
-    max-width: 45px;
-    opacity: 0.6;
-    right: 0 !important;
-    margin-right: 0 !important;
-    background: #fff;
-  }
-  aside.toc-nav:hover {
-    max-width: inherit;
-    opacity: 1;
-  }
+aside.toc-container {
+	z-index: 999999;
+	overflow-y: auto;
+	order: 2;
+	max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
+	overflow-y: auto;
+	position: sticky;
+	top: calc(var(--ifm-navbar-height) + 1rem);
 }
 
-@media only screen and (min-width: 1300px) {
-  section.content {
-    padding-right: 250px;
-  }
-}
-
-aside.toc-nav {
-  top: 70px;
-  right: 3%;
-  margin-right: 20px;
-  width: 250px;
-  z-index: 999999;
-  align-self: flex-start;
-  flex: 0 0 auto;
-  overflow-y: auto;
-  max-height: 70%;
-}
-
-aside.toc-nav.nothing {
-  width: 0;
+aside.toc-container.nothing {
+	width: 0;
 }
 
 .page_toc {
-  position: relative;
-  left: 0;
-  margin: 10px 0;
-  border: none;
-  font-size: 1.0em;
+	position: relative;
+	left: 0;
+	margin: 10px 0;
+	border: none;
+	font-size: 0.75em;
 }
 
 .page_toc p.title {
-  margin: 0;
-  padding-bottom: 5px;
-  font-weight: 600;
-  font-size: 1.2em;
+	margin: 0;
+	padding-bottom: 5px;
+	font-weight: 600;
+	font-size: 0.75em;
 }
 
 .page_toc .anchor:hover:after {
-  content: "";
+	content: "";
 }
 .page_toc div[class^="lv"] a:hover span {
-  color: var(--sidebar-nav-link-color--active, #42b983);
+	color: var(--sidebar-nav-link-color--active, #42b983);
 }
 
 .page_toc div {
-  border-left: 2px solid #e8e8e8;
-  text-indent: 10px;
-  padding: 2px 0;
-  cursor: pointer;
+	border-left: 2px solid #e8e8e8;
+	text-indent: 2em;
+	padding: 2px 0;
+	cursor: pointer;
 }
 
 .page_toc div.active {
-  border-left-color: var(--sidebar-nav-link-color--active, #42b983);
-  transition: border-left-color 0.23s;
+	border-left-color: var(--sidebar-nav-link-color--active, #42b983);
+	transition: border-left-color 0.23s;
 }
 
 .page_toc div.active a span {
-  color: var(--sidebar-nav-link-color--active, #42b983);
-  transition: color 0.23s;
+	color: var(--sidebar-nav-link-color--active, #42b983);
+	transition: color 0.23s;
 }
 
 .page_toc div[class^="lv"] a {
-  color: var(--text-color-base, black);
-  text-decoration: none;
-  font-weight: 300;
-  line-height: 2em;
-  display: block;
+	color: var(--text-color-base, black);
+	text-decoration: none;
+	font-weight: 300;
+	line-height: 2em;
+	display: block;
+	font-size: 0.9em;
 }
 
 .page_toc div[class^="lv"] a span {
-  color: var(--sidebar-nav-link-color--hover, var(--sidebar-nav-link-color));
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow:ellipsis;
+	color: var(--sidebar-nav-link-color--hover, var(--sidebar-nav-link-color));
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .page_toc div.lv2 {
-  text-indent: 20px;
+	text-indent: 1em;
 }
 
 .page_toc div.lv3 {
-  text-indent: 30px;
+	text-indent: 1.5em;
 }
 
 .page_toc div.lv4 {
-  text-indent: 40px;
+	text-indent: 2em;
 }
 
 .page_toc div.lv5 {
-  text-indent: 50px;
+	text-indent: 2.5em;
 }
 
 .page_toc div.lv6 {
-  text-indent: 60px;
+	text-indent: 3em;
+}
+
+.markdown-section,
+.toc-container {
+	padding: var(--docsifytabs-content-padding);
+}
+
+.markdown-section {
+	margin: 0 0;
 }
