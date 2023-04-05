@@ -1,11 +1,12 @@
-const path = require('path')
-const TerserWebpackPlugin = require('terser-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
+const path = require('path');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
-const pluginName = 'docsify-plugin-toc'
+const pluginName = 'docsify-plugin-toc';
 
 module.exports = {
   mode: 'production',
+  watch: true,
   entry: {
     [pluginName]: [path.join(process.cwd(), 'src', 'index.js')],
     [pluginName + '.min']: [path.join(process.cwd(), 'src', 'index.js')]
@@ -52,4 +53,4 @@ module.exports = {
     })
   ],
   module: {}
-}
+};
