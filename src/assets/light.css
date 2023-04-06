@@ -36,7 +36,7 @@ aside.toc-container.nothing {
 
 .page_toc div {
 	border-left: 2px solid #e8e8e8;
-	text-indent: 2em;
+	padding-left: 2em;
 	padding: 2px 0;
 	cursor: pointer;
 }
@@ -58,34 +58,36 @@ aside.toc-container.nothing {
 	line-height: 2em;
 	display: block;
 	font-size: 0.9em;
+  display: block;
 }
 
 .page_toc div[class^="lv"] a span {
 	color: var(--sidebar-nav-link-color--hover, var(--sidebar-nav-link-color));
 	display: block;
 	overflow: hidden;
-	white-space: nowrap;
 	text-overflow: ellipsis;
+	word-break: break-word;
+	white-space: initial;
 }
 
 .page_toc div.lv2 {
-	text-indent: 1em;
+	padding-left: 1.5em;
 }
 
 .page_toc div.lv3 {
-	text-indent: 1.5em;
+	padding-left: 2.5em;
 }
 
 .page_toc div.lv4 {
-	text-indent: 2em;
+	padding-left: 3.5em;
 }
 
 .page_toc div.lv5 {
-	text-indent: 2.5em;
+	padding-left: 4.5em;
 }
 
 .page_toc div.lv6 {
-	text-indent: 3em;
+	padding-left: 5.5em;
 }
 
 .markdown-section,
