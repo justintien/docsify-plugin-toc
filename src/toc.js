@@ -104,6 +104,8 @@ export function install(hook, vm) {
     // Child elements
     const tocContainer = document.querySelector('.toc-container');
     const markdownSection = document.querySelector('.markdown-section');
+    // Check if it's doc portal by querying for els
+    const isOnDocPortal = Boolean(document.querySelector('.sgds-masthead'));
 
     if (docMainContainer && tocContainer) {
       // Add classes for docMainContainer
@@ -113,6 +115,13 @@ export function install(hook, vm) {
       // Create a new container element to hold the content and add classes
       const contentContainer = document.createElement('div');
       contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-fluid', 'is-flex', 'is-flex-justify-c');
+
+      // Add margin if it is on doc portal
+      if (isOnDocPortal) {
+        // Add total of 3 rem
+        contentContainer.classList.add('margin--top'); // 1 Rem
+        docMainContainer.classList.add('margin--top--lg') // 2 Rem
+      }
 
       // Add classes for toc container
       tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-mobile', 'is-hidden-tablet-only');
