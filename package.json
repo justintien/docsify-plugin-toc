@@ -1,6 +1,6 @@
 {
   "name": "@developerportalsg/docsify-plugin-toc",
-  "version": "1.0.6",
+  "version": "1.0.10",
   "description": "A docsify plugin to display ToC for each page",
   "main": "src",
   "unpkg": "dist/docsify-plugin-toc.min.js",
@@ -11,6 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js src",
+    "dev": "node index.js",
     "build": "webpack"
   },
   "keywords": [
