@@ -1,5 +1,5 @@
 aside.toc-container {
-	z-index: 999999;
+	z-index: 20;
 	overflow-y: auto;
 	order: 2;
 	max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
