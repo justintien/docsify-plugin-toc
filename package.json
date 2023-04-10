@@ -1,6 +1,6 @@
 {
   "name": "@developerportalsg/docsify-plugin-toc",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A docsify plugin to display ToC for each page",
   "main": "src",
   "unpkg": "dist/docsify-plugin-toc.min.js",
