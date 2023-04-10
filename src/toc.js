@@ -35,7 +35,7 @@ function pageToC(headings, path) {
 
 // To generate each ToC item
 function generateToC(level, html) {
-  if (level >= 1 && level <= window.$docsify.toc.tocMaxLevel) {
+  if (level >= 1 && level <= ((window.$docsify.toc && window.$docsify.toc.tocMaxLevel) || 5)) {
     const heading = ['<div class="lv' + level + ' is-size-8">', html, '</div>'].join('');
     return heading;
   }
