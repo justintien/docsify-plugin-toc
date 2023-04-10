@@ -2,8 +2,8 @@
 function pageToC(headings, path) {
   let toc = ['<div class="page_toc"><h6 class="margin--bottom"><b>On This Page</b></h6>'];
   const list = [];
-  const ignoreHeaders = window.$docsify.toc.ignoreHeaders || [];
-  headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`);
+  const ignoreHeaders = (window.$docsify.toc && window.$docsify.toc.ignoreHeaders) || [];
+  headings = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
 
   if (headings) {
     headings.forEach(function (heading) {
@@ -45,7 +45,7 @@ function generateToC(level, html) {
 // scroll listener
 const scrollHandler = () => {
   const clientHeight = window.innerHeight;
-  const titleBlocks = document.querySelectorAll(`#main ${window.$docsify.toc.target}`);
+  const titleBlocks = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
   let insightBlocks = [];
   titleBlocks.forEach((titleBlock, index) => {
     const rect = titleBlock.getBoundingClientRect();
@@ -105,7 +105,7 @@ export function install(hook, vm) {
     const tocContainer = document.querySelector('.toc-container');
     const markdownSection = document.querySelector('.markdown-section');
     // Check if it's doc portal by querying for els
-    const isOnDocPortal = Boolean(document.querySelector('.sgds-masthead'));
+    const isOnDocPortal = document.querySelector('.sgds-masthead') !== null;
 
     if (docMainContainer && tocContainer) {
       // Add classes for docMainContainer
@@ -116,18 +116,16 @@ export function install(hook, vm) {
       const contentContainer = document.createElement('div');
       contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-fluid', 'is-flex', 'is-flex-justify-c');
 
-      // Add margin if it is on doc portal
-      if (isOnDocPortal) {
-        // Add total of 3 rem
-        contentContainer.classList.add('margin--top'); // 1 Rem
-        docMainContainer.classList.add('margin--top--lg') // 2 Rem
-      }
-
       // Add classes for toc container
       tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-mobile', 'is-hidden-tablet-only');
 
       // Add class for markdown container
       markdownSection.classList.add('col', 'is-9', 'is-12-touch');
+
+      if (isOnDocPortal) {
+        contentContainer.classList.add('margin--top');
+        docMainContainer.classList.add('margin--top--lg');
+      }
 
       // Move all the child elements of tocContainer to contentContainer
       while (tocContainer.nextSibling) {
