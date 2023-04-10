@@ -1,6 +1,6 @@
 // To collect headings and then add to the page ToC
 function pageToC(headings, path) {
-  let toc = ['<div class="page_toc"><h6 class="margin--bottom"><b>On This Page</b></h6>'];
+  let toc = ['<div class="page_toc"><h6 class="margin--bottom"><b>ON THIS PAGE</b></h6>'];
   const list = [];
   const ignoreHeaders = (window.$docsify.toc && window.$docsify.toc.ignoreHeaders) || [];
   headings = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
