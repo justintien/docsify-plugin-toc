@@ -13,8 +13,7 @@ aside.toc-container.nothing {
 }
 
 .page_toc {
-	position: relative;
-	left: 0;
+	position: fixed;
 	margin: 10px 0;
 	border: none;
 	font-size: 0.75em;
