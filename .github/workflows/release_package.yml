@@ -21,12 +21,12 @@ jobs:
           node-version: '14'
 
       # Install dependencies (required by Run tests step)
-      #- name: Install dependencies
-      #  run: yarn install
+      - name: Install dependencies
+        run: npm ci
 
-      # Tests
-      #- name: Run tests
-      #  run: yarn test
+      # Run Build
+      - name: Run tests
+        run: npm run build
 
       # Configure Git
       - name: Git configuration
@@ -70,9 +70,9 @@ jobs:
           git commit -m "chore: release ${{ env.NEW_VERSION }}"
           git tag ${{ env.NEW_VERSION }}
 
-      # Publish version to public repository
+      # Publish version and built files to public repository
       - name: Publish
-        run: yarn publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
 
