@@ -1,22 +1,21 @@
 aside.toc-container {
+	order: 2;
 	z-index: 20;
 	overflow-y: auto;
-	order: 2;
-	max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
-	overflow-y: auto;
-	position: sticky;
-	top: calc(var(--ifm-navbar-height) + 1rem);
 }
 
 aside.toc-container.nothing {
 	width: 0;
+	padding: 0px !important;
 }
 
 .page_toc {
 	position: fixed;
-	margin: 10px 0;
+	/* margin: 10px 0; */
 	border: none;
-	font-size: 0.75em;
+	max-width: 300px;
+	overflow-y: auto;
+	max-height: calc(100vh - 2rem - 2rem);
 }
 
 .page_toc p.title {
