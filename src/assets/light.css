@@ -57,6 +57,7 @@ aside.toc-container.nothing {
 	display: block;
 	font-size: 0.9em;
 	display: block;
+	margin-right: 1rem;
 }
 
 .page_toc div[class^="lv"] a span {
