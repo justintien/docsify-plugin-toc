@@ -1,6 +1,6 @@
 // To collect headings and then add to the page ToC
 function pageToC(headings, path) {
-  let toc = ['<div class="page_toc"><h6 class="margin--bottom"><b>ON THIS PAGE</b></h6>'];
+  let toc = ['<div class="page_toc">'];
   const list = [];
   const ignoreHeaders = (window.$docsify.toc && window.$docsify.toc.ignoreHeaders) || [];
   headings = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
@@ -12,7 +12,6 @@ function pageToC(headings, path) {
 
       let needSkip = false;
       if (ignoreHeaders.length > 0) {
-        console.error(innerText);
         needSkip = ignoreHeaders.some(str => innerText.match(str));
       }
 
@@ -42,38 +41,43 @@ function generateToC(level, html) {
   return '';
 }
 
-// scroll listener
-const scrollHandler = () => {
-  const clientHeight = window.innerHeight;
-  const titleBlocks = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
-  let insightBlocks = [];
-  titleBlocks.forEach((titleBlock, index) => {
-    const rect = titleBlock.getBoundingClientRect();
-    // still in sight
-    if (rect.top <= clientHeight && rect.height + rect.top > 0) {
-      insightBlocks.push(index);
-    }
-  });
-  const scrollingElement = document.scrollingElement || document.body;
-  // scroll to top, choose the first one
-  if (scrollingElement.scrollTop === 0) {
-    insightBlocks = [0];
-  } else if (scrollingElement.offsetHeight - window.innerHeight - scrollingElement.scrollTop < 5 &&
-    insightBlocks.length > 0) {
-    // scroll to bottom and still multi title in sight, choose the first one
-    insightBlocks = [insightBlocks[0]];
-  }
-  if (insightBlocks.length) {
-    const tocList = document.querySelectorAll('.page_toc>div');
-    tocList.forEach((t, index) => {
-      if (index === insightBlocks[0]) {
-        t.classList.add('active');
-      } else {
-        t.classList.remove('active');
+function scrollHandler() {
+  // TOC
+  const tocList = document.querySelectorAll('.page_toc > div');
+
+  // Main
+  const anchors = document.querySelectorAll('article#main ' + ((window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'));
+  const doc = document.documentElement;
+
+  const coverHeight = (document.querySelector('section.cover') && document.querySelector('section.cover').getBoundingClientRect().height) || 0;
+  const top = ((doc && doc.scrollTop) || document.body.scrollTop) - coverHeight;
+  let last;
+
+  for (let i = 0, len = anchors.length; i < len; i += 1) {
+    const node = anchors[i];
+
+    if (node.offsetTop > top) {
+      if (!last) {
+        last = node;
       }
-    });
+
+      break;
+    } else {
+      last = node;
+    }
   }
-};
+
+  if (!last) {
+    return;
+  }
+
+  tocList.forEach((toc) => {
+    const tocLink = toc.querySelector('a[data-id]');
+    const tocLinkID = tocLink.getAttribute('data-id');
+    const isActive = tocLinkID === last.getAttribute('id');
+    toc.classList.toggle('active', isActive);
+  });
+}
 
 export function install(hook, vm) {
   hook.mounted(function () {
