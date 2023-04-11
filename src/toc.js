@@ -118,7 +118,7 @@ export function install(hook, vm) {
 
       // Create a new container element to hold the content and add classes
       const contentContainer = document.createElement('div');
-      contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-fluid', 'is-flex', 'is-flex-justify-c', 'margin--right--none', 'margin--left--none', 'padding--left--xl', 'padding--right--xl');
+      contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-fluid', 'is-flex', 'is-flex-justify-c', 'margin--right--none', 'margin--left--none', 'padding--left', 'padding--right');
 
       // Add classes for toc container
       tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-touch');
