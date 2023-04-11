@@ -46,7 +46,7 @@ aside.toc-container.nothing {
 }
 
 .page_toc div.active a span {
-	color: var(--sidebar-nav-link-color--active, #42b983);
+	color: var(--sidebar-nav-link-color--active, #42b983) !important;
 	transition: color 0.23s;
 }
 
@@ -57,7 +57,7 @@ aside.toc-container.nothing {
 	line-height: 2em;
 	display: block;
 	font-size: 0.9em;
-  display: block;
+	display: block;
 }
 
 .page_toc div[class^="lv"] a span {
