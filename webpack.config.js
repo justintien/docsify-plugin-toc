@@ -6,7 +6,7 @@ const pluginName = 'docsify-plugin-toc';
 
 module.exports = {
   mode: 'production',
-  watch: true,
+  watch: false,
   entry: {
     [pluginName]: [path.join(process.cwd(), 'src', 'index.js')],
     [pluginName + '.min']: [path.join(process.cwd(), 'src', 'index.js')]
