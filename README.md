@@ -1,10 +1,10 @@
 # docsify-plugin-toc
 
-> page's ToC for docsify.
+> Page's ToC for docsify for the Singapore Government Documentation Portal
 
-[![npm](https://img.shields.io/npm/v/docsify-plugin-toc.svg?style=flat-square)](https://www.npmjs.com/package/docsify-plugin-toc)
+[![npm](https://img.shields.io/npm/v/docsify-plugin-toc.svg?style=flat-square)](https://www.npmjs.com/package/@developerportalsg/docsify-plugin-toc)
 
-[![homepage](./snapshot.png)](https://blog.jiapan.tw "Justin (Jiapan 賈胖) 的 Blog")
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/58126222/231341632-81012165-d570-4485-8d34-9c2cabe45f79.png">
 
 ## Usage
 
