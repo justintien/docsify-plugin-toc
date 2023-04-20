@@ -47,6 +47,7 @@ aside.toc-container.nothing {
 .page_toc div.active a span {
 	color: var(--sidebar-nav-link-color--active, #42b983) !important;
 	transition: color 0.23s;
+	font-weight: 600;
 }
 
 .page_toc div[class^="lv"] a {
