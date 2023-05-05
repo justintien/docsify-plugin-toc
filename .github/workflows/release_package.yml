@@ -72,7 +72,7 @@ jobs:
 
       # Publish version and built files to public repository
       - name: Publish
-        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }} --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
 
