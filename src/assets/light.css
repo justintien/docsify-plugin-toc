@@ -15,7 +15,9 @@ aside.toc-container.nothing {
 	border: none;
 	max-width: 300px;
 	overflow-y: auto;
-	max-height: calc(100vh - 2rem - 2rem);
+	max-height: calc(100vh - 2rem - 3rem);
+	margin-right: 2rem;
+	width: -webkit-fill-available;
 }
 
 .page_toc p.title {
@@ -97,4 +99,29 @@ aside.toc-container.nothing {
 
 .markdown-section {
 	margin: 0 0;
+}
+
+@media (pointer: fine) {
+	.thin-scrollbar {
+		scrollbar-width: thin;
+	}
+
+	.thin-scrollbar::-webkit-scrollbar {
+		height: 7px;
+		width: 7px;
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 10px;
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-thumb {
+		background: silver;
+		border-radius: 10px;
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: #a7a7a7;
+	}
 }
