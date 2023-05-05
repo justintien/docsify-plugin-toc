@@ -1,6 +1,6 @@
 // To collect headings and then add to the page ToC
 function pageToC(headings, path) {
-  let toc = ['<div class="page_toc"><p class="has-text-weight-bold margin--bottom--sm">On this page</p>'];
+  let toc = ['<div class="page_toc thin-scrollbar"><p class="has-text-weight-bold margin--bottom--sm">On this page</p>'];
   const list = [];
   const ignoreHeaders = (window.$docsify.toc && window.$docsify.toc.ignoreHeaders) || [];
   headings = document.querySelectorAll(`#main ${(window.$docsify.toc && window.$docsify.toc.target) || 'h2, h3, h4, h5, h6'}`);
@@ -79,6 +79,35 @@ function scrollHandler() {
   });
 }
 
+function setFluidClass() {
+  const contentContainer = document.querySelector('.content-container');
+  const currentWindowWidth = window.innerWidth;
+
+  // Check if window size has changed
+  if (setFluidClass.prevWindowWidth !== currentWindowWidth) {
+    setFluidClass.prevWindowWidth = currentWindowWidth;
+
+    // Call debounce to delay execution
+    debounce(() => {
+      if (window.innerWidth < 1700) {
+        contentContainer.classList.add('is-fluid');
+      } else {
+        contentContainer.classList.remove('is-fluid');
+      }
+    }, 100)();
+  }
+}
+
+const debounce = (func, delay = 500) => {
+  let debounceTimer;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  };
+};
+
 export function install(hook, vm) {
   hook.mounted(function () {
     const content = window.Docsify.dom.find('.content');
@@ -118,10 +147,10 @@ export function install(hook, vm) {
 
       // Create a new container element to hold the content and add classes
       const contentContainer = document.createElement('div');
-      contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-fluid', 'is-flex', 'is-flex-justify-c', 'margin--right--none', 'margin--left--none', 'padding--left', 'padding--right');
+      contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-flex', 'is-flex-justify-c', 'margin--right--none', 'margin--left--none', 'padding--left', 'padding--right'); // 'is-fluid'
 
       // Add classes for toc container
-      tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-touch');
+      tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-touch', 'padding--top--none', 'padding--left', 'padding--right');
 
       // Add class for markdown container
       markdownSection.classList.add('col', 'is-9', 'is-12-touch');
@@ -141,6 +170,12 @@ export function install(hook, vm) {
 
       // Move tocContainer to the top of contentContainer
       contentContainer.insertBefore(tocContainer, contentContainer.firstChild);
+
+      // Add a debouncer at the end
+      setFluidClass();
+      window.addEventListener('resize', function () {
+        debounce(setFluidClass(), 10000);
+      });
     }
   });
 }
