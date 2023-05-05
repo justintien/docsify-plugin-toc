@@ -15,7 +15,7 @@ aside.toc-container.nothing {
 	border: none;
 	max-width: 300px;
 	overflow-y: auto;
-	max-height: calc(100vh - 2rem - 3rem);
+	max-height: calc(100vh - 2rem - 6rem);
 	margin-right: 2rem;
 	width: -webkit-fill-available;
 }
@@ -101,7 +101,7 @@ aside.toc-container.nothing {
 	margin: 0 0;
 }
 
-@media (pointer: fine) {
+/* @media (pointer: fine) {
 	.thin-scrollbar {
 		scrollbar-width: thin;
 	}
@@ -124,4 +124,4 @@ aside.toc-container.nothing {
 	.thin-scrollbar::-webkit-scrollbar-thumb:hover {
 		background: #a7a7a7;
 	}
-}
+} */
