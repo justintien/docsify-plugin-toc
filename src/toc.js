@@ -150,7 +150,7 @@ export function install(hook, vm) {
       contentContainer.classList.add('content-container', 'row', 'w-100', 'sgds-container', 'is-flex', 'is-flex-justify-c', 'margin--right--none', 'margin--left--none', 'padding--left', 'padding--right'); // 'is-fluid'
 
       // Add classes for toc container
-      tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-touch', 'padding--top--none', 'padding--left', 'padding--right');
+      tocContainer.classList.add('col', 'col', 'is-3-desktop', 'is-3-widescreen', 'is-3-fullhd', 'is-hidden-touch', 'padding--left', 'padding--right');
 
       // Add class for markdown container
       markdownSection.classList.add('col', 'is-9', 'is-12-touch');
