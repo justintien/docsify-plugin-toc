@@ -15,7 +15,7 @@ aside.toc-container.nothing {
 	border: none;
 	max-width: 300px;
 	overflow-y: auto;
-	max-height: calc(100vh - 2rem - 7rem);
+	max-height: calc(100vh - 2rem - 10rem);
 	margin-right: 2rem;
 	width: -webkit-fill-available;
 }
