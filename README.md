@@ -80,8 +80,13 @@ We are dedicated to providing a high-quality product, and we welcome any feedbac
 
     ```html
     <!-- head -->
+    <!-- Theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/@sg-developer-portal/doc-theme-default@0.0.13/public/dist/doc.css"
+    />
+    <!-- Table Of Content -->
     <link rel="stylesheet" href="https://unpkg.com/@developerportalsg/docsify-plugin-toc/dist/light.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@govtechsg/sgds@1.4.0/css/sgds.css" />
     <!-- Also insert you custom css -->
 
     <!-- body -->
