@@ -143,7 +143,6 @@ export function install(hook, vm) {
     if (docMainContainer && tocContainer) {
       // Add classes for docMainContainer
       docMainContainer.classList.add('sgds-section', 'is-flex', 'is-flex-justify-c');
-      docMainContainer.setAttribute('style', 'overflow-y: hidden;');
 
       // Create a new container element to hold the content and add classes
       const contentContainer = document.createElement('div');
@@ -158,6 +157,7 @@ export function install(hook, vm) {
       if (isOnDocPortal) {
         contentContainer.classList.add('margin--top');
         docMainContainer.classList.add('margin--top--lg');
+        docMainContainer.setAttribute('style', 'overflow-y: hidden;');
       }
 
       // Move all the child elements of tocContainer to contentContainer
