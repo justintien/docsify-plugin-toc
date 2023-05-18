@@ -1,42 +1,49 @@
 {
-  "name": "@developerportalsg/docsify-plugin-toc",
-  "version": "2.1.5",
-  "description": "A docsify plugin to display ToC for each page",
-  "main": "src",
-  "unpkg": "dist/docsify-plugin-toc.min.js",
-  "files": [
-    "dist/",
-    "snapshot.png"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js src",
-    "dev": "node index.js",
-    "build": "webpack"
-  },
-  "keywords": [
-    "docsify"
-  ],
-  "author": "Chai Pin Zheng",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "eslint": "^8.16.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ducksss/doc-portal-docsify-plugin-toc.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Ducksss/doc-portal-docsify-plugin-toc/issues"
-  },
-  "homepage": "https://github.com/Ducksss/doc-portal-docsify-plugin-toc#readme"
+	"name": "@developerportalsg/docsify-plugin-toc",
+	"version": "2.1.5",
+	"description": "A docsify plugin to display ToC for each page",
+	"main": "src",
+	"unpkg": "dist/docsify-plugin-toc.min.js",
+	"files": [
+		"dist/",
+		"snapshot.png"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint --ext .js src",
+		"dev": "node index.js",
+		"build": "webpack"
+	},
+	"keywords": [
+		"docsify",
+		"table of content",
+		"plugin",
+		"navigation"
+	],
+	"author": "Chai Pin Zheng",
+	"license": "GPL-3.0-or-later",
+	"devDependencies": {
+		"babel-eslint": "^10.1.0",
+		"concurrently": "^8.0.1",
+		"copy-webpack-plugin": "^11.0.0",
+		"eslint": "^8.16.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-standard": "^5.0.0",
+		"sanitize-html": "^2.10.0",
+		"ts-loader": "^9.4.2",
+		"typescript": "^5.0.4",
+		"webpack": "^5.72.1",
+		"webpack-cli": "^4.9.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Ducksss/doc-portal-docsify-plugin-toc.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Ducksss/doc-portal-docsify-plugin-toc/issues"
+	},
+	"homepage": "https://github.com/Ducksss/doc-portal-docsify-plugin-toc#readme"
 }

@@ -6,10 +6,22 @@ const pluginName = 'docsify-plugin-toc';
 
 module.exports = {
   mode: 'production',
-  watch: false,
+  watch: process.env.WATCH === 'true' || false,
+  module: {
+    rules: [
+      {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
   entry: {
-    [pluginName]: [path.join(process.cwd(), 'src', 'index.js')],
-    [pluginName + '.min']: [path.join(process.cwd(), 'src', 'index.js')]
+    [pluginName]: [path.join(process.cwd(), 'src', 'index.ts')],
+    [pluginName + '.min']: [path.join(process.cwd(), 'src', 'index.ts')]
   },
   output: {
     path: path.join(process.cwd(), 'dist'),
@@ -51,6 +63,5 @@ module.exports = {
         // }
       ]
     })
-  ],
-  module: {}
+  ]
 };
