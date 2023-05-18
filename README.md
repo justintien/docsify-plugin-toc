@@ -14,14 +14,14 @@
 [![Forks](https://img.shields.io/github/forks/sg-developer-portal/doc-portal-docsify-plugin-toc.svg)][forks-url]
 [![Stargazers](https://img.shields.io/github/stars/sg-developer-portal/doc-portal-docsify-plugin-toc.svg)][stars-url]
 [![MIT License](https://img.shields.io/github/license/sg-developer-portal/doc-portal-docsify-plugin-toc.svg)][license-url]
-[![npm](https://img.shields.io/npm/v/@developerportalsg/docsify-plugin-toc.svg?style=flat-square)](npm-url)
+[![npm](https://img.shields.io/npm/v/@developerportalsg/docsify-plugin-toc.svg?style=flat-square)][npm-url]
 
 <!-- PROJECT LOGO -->
 <br />
 
 <div align="center">
   <a href="https://github.com/sg-developer-portal/doc-portal-docsify-plugin-toc">
-    <img src="src/assets/logo_developer.gov.sg.png" alt="Logo" height="100">
+    <img src="src/assets/logo_developer.gov.sg.svg" alt="Logo" height="100">
   </a>
   
   <h3 align="center">Docsify Table of Content Plugin (TOC)</h3>
@@ -152,8 +152,6 @@ You can find our plugin on GitHub. Please refer to the README file for detailed 
 [issues-shield]: https://img.shields.io/github/issues/sg-developer-portal/doc-portal-docsify-plugin-toc.svg?style=for-the-badge
 [issues-url]: https://github.com/sg-developer-portal/doc-portal-docsify-plugin-toc/issues
 [license-shield]: https://img.shields.io/github/license/sg-developer-portal/doc-portal-docsify-plugin-toc.svg?style=for-the-badge
-[license-url]: https://github.com/Ducksss/FakeNews/blob/main/LICENSE
+[license-url]: https://github.com/sg-developer-portal/docsify-toc-plugin/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
 [npm-url]: https://www.npmjs.com/package/@developerportalsg/docsify-plugin-toc

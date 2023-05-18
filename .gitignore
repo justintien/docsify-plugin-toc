@@ -1,3 +1,35 @@
-node_modules
+# Dependency directories
+/node_modules
+/dist
+
+# TypeScript build output
+/.tscache
+/tsconfig.tsbuildinfo
+
+# IDE/Editor specific files
+/.vscode
+/.idea
+/.DS_Store
+
+# Build artifacts
+/build
+/out
+
+# Environment variables
+/.env
+
+# Logs
+/logs
+
+# Compiled JavaScript files
+/src/*.js
+
+# TypeScript declaration files
+*.d.ts
+
+# Package lock files
 package-lock.json
-/dist   
+yarn.lock
+
+# Miscellaneous
+*.log
