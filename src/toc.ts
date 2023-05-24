@@ -13,7 +13,7 @@ declare global {
 }
 
 // To collect headings and then add to the page ToC
-function pageToC(headings?: NodeListOf<HTMLElement>, path?: string) {
+export function pageToC(headings?: NodeListOf<HTMLElement>, path?: string) {
 	let toc: string[] = ['<div class="page_toc thin-scrollbar"><p class="has-text-weight-bold margin--bottom--sm">On this page</p>'];
 	const list: string[] = [];
 	const ignoreHeaders: string[] = window.$docsify.toc?.ignoreHeaders || [];
@@ -48,7 +48,7 @@ function pageToC(headings?: NodeListOf<HTMLElement>, path?: string) {
 }
 
 // To generate each ToC item
-function generateToC(level: number, html: string) {
+export function generateToC(level: number, html: string) {
 	if (level >= 1 && level <= (window.$docsify.toc?.tocMaxLevel || 5)) {
 		const heading = ['<div class="lv' + level + ' is-size-8">', html, "</div>"].join("");
 		return heading;
@@ -56,7 +56,7 @@ function generateToC(level: number, html: string) {
 	return "";
 }
 
-function scrollHandler() {
+export function scrollHandler() {
 	// TOC
 	const tocList = document.querySelectorAll(".page_toc > div");
 
@@ -94,7 +94,7 @@ function scrollHandler() {
 	});
 }
 
-function setFluidClass() {
+export function setFluidClass() {
 	const contentContainer: HTMLElement | null = document.querySelector(".content-container");
 	const currentWindowWidth = window.innerWidth;
 
@@ -106,7 +106,7 @@ function setFluidClass() {
 	}
 }
 
-const debounce = <T extends (...args: any[]) => void>(func: T, delay = 500) => {
+export const debounce = <T extends (...args: any[]) => void>(func: T, delay = 500) => {
 	let timeoutId: ReturnType<typeof setTimeout>;
 
 	return function (this: any, ...args: Parameters<T>) {

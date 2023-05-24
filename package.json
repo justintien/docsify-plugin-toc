@@ -9,7 +9,7 @@
 		"snapshot.png"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest --coverage --coverageDirectory='coverage'",
 		"lint": "eslint --ext .js src",
 		"dev": "node index.js",
 		"build": "webpack"
@@ -23,6 +23,7 @@
 	"author": "Chai Pin Zheng",
 	"license": "GPL-3.0-or-later",
 	"devDependencies": {
+		"@types/jest": "^29.5.1",
 		"babel-eslint": "^10.1.0",
 		"concurrently": "^8.0.1",
 		"copy-webpack-plugin": "^11.0.0",
@@ -32,7 +33,9 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^6.0.0",
 		"eslint-plugin-standard": "^5.0.0",
+		"jest": "^29.5.0",
 		"sanitize-html": "^2.10.0",
+		"ts-jest": "^29.1.0",
 		"ts-loader": "^9.4.2",
 		"typescript": "^5.0.4",
 		"webpack": "^5.72.1",
