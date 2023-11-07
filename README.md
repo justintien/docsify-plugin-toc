@@ -26,11 +26,11 @@
 
     ```html
     <!-- head -->
-    <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
+    <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@latest/dist/light.css">
     <!-- Also insert you custom css -->
 
     <!-- body -->
-    <script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+    <script src="https://unpkg.com/docsify-plugin-toc@latest/dist/docsify-plugin-toc.min.js"></script>
     ```
 
 ## Options
