@@ -12,7 +12,6 @@ function pageToC (headings, path) {
 
       let needSkip = false
       if (ignoreHeaders.length > 0) {
-        console.error(innerText)
         needSkip = ignoreHeaders.some(str => innerText.match(str))
       }
 
