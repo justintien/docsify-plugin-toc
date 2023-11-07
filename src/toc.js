@@ -1,36 +1,48 @@
 // To collect headings and then add to the page ToC
-function pageToC (headings, path) {
+function pageToC () {
+  var commentsIterator = document.createNodeIterator(
+    document.querySelector('#main'),
+    NodeFilter.SHOW_COMMENT,
+  )
+  while(commentsIterator.nextNode()) {
+    var commentNode = commentsIterator.referenceNode
+    if (commentNode.textContent.trim() === '{docsify-ignore-all}')
+      return ''
+  }
+
   let toc = ['<div class="page_toc">']
   const list = []
   const ignoreHeaders = window.$docsify.toc.ignoreHeaders || []
-  headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
+  const headings = document.querySelectorAll(`#main ${window.$docsify.toc.target}`)
 
-  if (headings) {
+  if (headings)
     headings.forEach(function (heading) {
       const innerText = heading.innerText
       const innerHtml = heading.innerHTML
 
       let needSkip = false
-      if (ignoreHeaders.length > 0) {
-        console.error(innerText)
+      if (ignoreHeaders.length > 0)
         needSkip = ignoreHeaders.some(str => innerText.match(str))
-      }
 
-      if (needSkip) return
+      const node = heading.nextSibling
+      if (node.nodeType === node.COMMENT_NODE && node.textContent.trim() === '{docsify-ignore}')
+        needSkip = true
+
+      if (needSkip)
+        return
 
       const item = generateToC(heading.tagName.replace(/h/gi, ''), innerHtml)
-      if (item) {
+      if (item)
         list.push(item)
-      }
     })
-  }
+
   if (list.length > 0) {
     toc = toc.concat(list)
     toc.push('</div>')
     return toc.join('')
-  } else {
-    return ''
   }
+
+  return ''
 }
 
 // To generate each ToC item
