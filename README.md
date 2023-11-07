@@ -16,7 +16,7 @@
       toc: {
         tocMaxLevel: 5,
         target: 'h2, h3, h4, h5, h6',
-        ignoreHeaders:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
+        ignoreHeaders:  ['Content', 'Job Description']
       },
     }
     </script>
